@@ -60,4 +60,45 @@ class Produto:
         if not isinstance(other, Produto):
             return False
         return self.codigo == other.codigo
-    
+
+# Funções de validação de entrada (reutilizáveis em outros módulos)
+
+def ler_string(prompt: str, obrigatorio: bool = True) -> str:
+    """Lê uma string do terminal com validação de vazio."""
+    while True:
+        valor = input(prompt).strip()
+        if valor:
+            return valor
+        if not obrigatorio:
+            return ""
+        print("Campo obrigatório. Digite um valor.")
+
+
+def ler_float(prompt: str, minimo: float = 0.0, exclusivo: bool = True) -> float:
+    """Lê um número decimal com validação de intervalo."""
+    while True:
+        texto = input(prompt).strip().replace(",", ".")
+        try:
+            valor = float(texto)
+            if exclusivo and valor <= minimo:
+                print(f"O valor deve ser maior que {minimo}.")
+            elif not exclusivo and valor < minimo:
+                print(f"O valor deve ser ≥ {minimo}.")
+            else:
+                return valor
+        except ValueError:
+            print("Número inválido. Use apenas dígitos e vírgula/ponto decimal.")
+
+
+def ler_int(prompt: str, minimo: int = 0) -> int:
+    """Lê um número inteiro com validação de intervalo."""
+    while True:
+        texto = input(prompt).strip()
+        try:
+            valor = int(texto)
+            if valor < minimo:
+                print(f"O valor deve ser ≥ {minimo}.")
+            else:
+                return valor
+        except ValueError:
+            print("Número inteiro inválido.")
