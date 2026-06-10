@@ -87,6 +87,45 @@ class Estoque:
     def buscar_por_codigo(self, codigo: str) -> Optional[Produto]:
         idx = self._busca_binaria_indice(codigo)
         return self._vetor_ordenado[idx] if idx != -1 else None
+
+    def buscar_por_nome(self, nome: str) -> list[Produto]:
+        nome_lower = nome.strip().lower()
+        return [p for p in self._vetor_nao_ord if nome_lower in p.nome.lower()]
+
+    def editar(
+        self,
+        codigo: str,
+        novo_nome: Optional[str] = None,
+        novo_preco: Optional[float] = None,
+        nova_quantidade: Optional[int] = None,
+        nova_categoria: Optional[str] = None,
+    ) -> Produto:
+        produto = self.buscar_por_codigo(codigo)
+        if produto is None:
+            raise ValueError(f"Produto '{codigo}' não encontrado.")
+        if novo_nome:
+            produto.nome = novo_nome.strip()
+        if nova_categoria:
+            produto.categoria = nova_categoria.strip()
+        if novo_preco is not None:
+            if novo_preco <= 0:
+                raise ValueError("Preço deve ser positivo.")
+            produto.preco = novo_preco
+        if nova_quantidade is not None:
+            if nova_quantidade < 0:
+                raise ValueError("Quantidade não pode ser negativa.")
+            produto.quantidade = nova_quantidade
+        registrar_log(f"EDICAO: {produto.codigo} - {produto.nome}")
+        return produto
+
+    def remover(self, codigo: str) -> Produto:
+        idx = self._busca_binaria_indice(codigo)
+        if idx == -1:
+            raise ValueError(f"Produto '{codigo}' não encontrado.")
+        produto = self._vetor_ordenado.pop(idx)
+        self._vetor_nao_ord.remove(produto)
+        registrar_log(f"REMOCAO: {produto.codigo} - {produto.nome}")
+        return produto
     
     def carregar_produtos(self, produtos: list[Produto]) -> None:
         self._vetor_ordenado.clear()
