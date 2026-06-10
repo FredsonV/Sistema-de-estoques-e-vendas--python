@@ -163,7 +163,4 @@ O código segue rigorosamente as convenções da **PEP 8**:
 ---
 
 <div align="center">
-
-**⭐ Desenvolvido com ❤️ em Python**
-
 </div>
