@@ -1,0 +1,16 @@
+[
+  {
+    "codigo": "A001",
+    "nome": "Feijão Carioca",
+    "categoria": "Alimentos",
+    "preco": 8.0,
+    "quantidade": 3
+  },
+  {
+    "codigo": "B001",
+    "nome": "Arroz Branco",
+    "categoria": "Alimentos",
+    "preco": 5.0,
+    "quantidade": 10
+  }
+]

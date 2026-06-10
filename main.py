@@ -206,7 +206,7 @@ def menu_relatorios(est: Estoque) -> None:
         elif op == "0":
             break
         else:
-            print("  ⚠  Opção inválida.")
+            print("Opção inválida.")
 
 # Menu principal
 
@@ -229,7 +229,7 @@ def executar() -> None:
     limpar_tela()
     print("\n  ╔══════════════════════════════════╗")
     print("  ║   Sistema de Estoque e Vendas    ║")
-    print("  ╚══════════════════════════════════╝")
+    print("  ╚═══════════════════════════════════╝")
     if n:
         print(f"\n  ✔  {n} produto(s) carregado(s) do arquivo.")
     else:
@@ -239,7 +239,6 @@ def executar() -> None:
         "1": cadastrar_produto,
         "2": editar_produto,
         "3": remover_produto,
-        
         "4": buscar_por_codigo,
         "5": buscar_por_nome,
         "6": registrar_venda,
