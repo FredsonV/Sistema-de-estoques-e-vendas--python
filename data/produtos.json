@@ -1,16 +1,58 @@
 [
   {
-    "codigo": "A001",
-    "nome": "Feijão Carioca",
+    "codigo": "ALM001",
+    "nome": "Arroz Branco 5kg",
     "categoria": "Alimentos",
-    "preco": 8.0,
+    "preco": 24.9,
+    "quantidade": 100
+  },
+  {
+    "codigo": "ALM002",
+    "nome": "Feijão Carioca 1kg",
+    "categoria": "Alimentos",
+    "preco": 8.5,
     "quantidade": 3
   },
   {
-    "codigo": "B001",
-    "nome": "Arroz Branco",
-    "categoria": "Alimentos",
-    "preco": 5.0,
-    "quantidade": 10
+    "codigo": "BEB001",
+    "nome": "Água Mineral 500ml",
+    "categoria": "Bebidas",
+    "preco": 2.0,
+    "quantidade": 200
+  },
+  {
+    "codigo": "BEB002",
+    "nome": "Suco de Laranja 1L",
+    "categoria": "Bebidas",
+    "preco": 12.9,
+    "quantidade": 4
+  },
+  {
+    "codigo": "HIG001",
+    "nome": "Shampoo Anticaspa 400ml",
+    "categoria": "Higiene",
+    "preco": 18.75,
+    "quantidade": 2
+  },
+  {
+    "codigo": "HIG002",
+    "nome": "Sabonete Lavanda 90g",
+    "categoria": "Higiene",
+    "preco": 3.5,
+    "quantidade": 50
+  },
+  {
+    "codigo": "LIM001",
+    "nome": "Detergente Neutro 500ml",
+    "categoria": "Limpeza",
+    "preco": 4.2,
+    "quantidade": 0
+  },
+  {
+    "codigo": "LIM002",
+    "nome": "Desinfetante Pinho 1L",
+    "categoria": "Limpeza",
+    "preco": 9.99,
+    "quantidade": 30
   }
 ]

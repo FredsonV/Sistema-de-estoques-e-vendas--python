@@ -158,7 +158,15 @@ def listar_por_categoria(est: Estoque) -> None:
     print("  Categorias disponíveis:")
     for i, c in enumerate(cats, 1):
         print(f"    {i}. {c}")
-    categoria = ler_string("\n  Digite a categoria: ")
+    escolha = ler_string("\n  Digite o número ou o nome da categoria: ")
+    if escolha.isdigit():
+        idx = int(escolha) - 1
+        if idx < 0 or idx >= len(cats):
+            print("\n  ✖  Número inválido.")
+            return
+        categoria = cats[idx]
+    else:
+        categoria = escolha
     resultados = est.listar_por_categoria(categoria)
     paginar(resultados, f"Categoria: {categoria}")
 
